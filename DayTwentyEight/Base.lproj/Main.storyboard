@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +15,40 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-eP-nYm">
+                                <rect key="frame" x="254" y="116" width="92" height="30"/>
+                                <state key="normal" title="Process Stuff">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedProcessStuff:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GE8-Fc-9AC"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CaP-6j-0hZ">
+                                <rect key="frame" x="290" y="320" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nno-V8-rRy">
+                                <rect key="frame" x="225" y="229" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="lvg-9d-5Lb"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nno-V8-rRy" firstAttribute="top" secondItem="RMC-eP-nYm" secondAttribute="bottom" constant="83" id="F58-Nf-qNI"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CaP-6j-0hZ" secondAttribute="bottom" constant="260" id="Tsp-ho-sv7"/>
+                            <constraint firstItem="nno-V8-rRy" firstAttribute="centerX" secondItem="CaP-6j-0hZ" secondAttribute="centerX" id="XSF-MM-ErH"/>
+                            <constraint firstItem="CaP-6j-0hZ" firstAttribute="centerX" secondItem="RMC-eP-nYm" secondAttribute="centerX" id="f7u-1h-psJ"/>
+                            <constraint firstItem="RMC-eP-nYm" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="wWQ-Gc-Uum"/>
+                            <constraint firstItem="RMC-eP-nYm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="96" id="z9U-qU-VZR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicator" destination="CaP-6j-0hZ" id="Lzn-xt-3vv"/>
+                        <outlet property="progressBar" destination="nno-V8-rRy" id="XqJ-pg-wua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)tappedProcessStuff:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @end
 
